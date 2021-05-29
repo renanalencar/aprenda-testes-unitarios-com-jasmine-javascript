@@ -1,4 +1,4 @@
-describe("Comprador toBe", function () {
+describe("Comparador toBe", function () {
     it("Deve validar o uso do toBe", function() {
         var obj1 = { valor: true };
         var obj2 = { valor: true };
