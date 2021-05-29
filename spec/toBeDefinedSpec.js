@@ -1,5 +1,5 @@
 describe("Teste do toBeDefined", function () {
-    it("Deve demonstrar o uso do toBeDefined", function() {
+    it("deve demonstrar o uso do toBeDefined", function() {
         var n1 = 10;
         var n2;
         var n3 = undefined;
