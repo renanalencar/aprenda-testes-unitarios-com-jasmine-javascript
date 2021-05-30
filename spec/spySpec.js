@@ -66,9 +66,15 @@ describe("Testes do objeto Spy", function() {
     //     expect(function() { Calculadora.somar(5,2); }).toThrowError("erro");
     // });
 
-    it("deve demonstrar o uso do calls.any", function() {
+    // it("deve demonstrar o uso do calls.any", function() {
+    //     Calculadora.somar(1, 1);
+    //     expect(Calculadora.somar.calls.any()).toBeTruthy();
+    // });
+
+    it("deve demonstrar o uso do calls.count", function() {
         Calculadora.somar(1, 1);
-        expect(Calculadora.somar.calls.any()).toBeTruthy();
+        Calculadora.somar(2, 2);
+        expect(Calculadora.somar.calls.count()).toEqual(2);
     });
 
 });
