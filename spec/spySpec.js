@@ -77,18 +77,29 @@ describe("Testes do objeto Spy", function() {
     //     expect(Calculadora.somar.calls.count()).toEqual(2);
     // });
 
-    it("deve demonstrar o uso do calls.argsFor", function() {
-        Calculadora.somar(1, 1);
-        Calculadora.somar(2, 2);
-        expect(Calculadora.somar.calls.argsFor(0)).toEqual([1, 1]);
-        expect(Calculadora.somar.calls.argsFor(1)).toEqual([2, 2]);
-    });
+    // it("deve demonstrar o uso do calls.argsFor", function() {
+    //     Calculadora.somar(1, 1);
+    //     Calculadora.somar(2, 2);
+    //     expect(Calculadora.somar.calls.argsFor(0)).toEqual([1, 1]);
+    //     expect(Calculadora.somar.calls.argsFor(1)).toEqual([2, 2]);
+    // });
 
-    it("deve demonstrar o uso do calls.allArgs", function() {
+    // it("deve demonstrar o uso do calls.allArgs", function() {
+    //     Calculadora.somar(1, 1);
+    //     Calculadora.somar(2, 2);
+    //     expect(Calculadora.somar.calls.allArgs())
+    //         .toEqual([[1, 1], [2, 2]]);
+    // });
+
+    it("deve demonstrar o uso do calls.all", function() {
         Calculadora.somar(1, 1);
         Calculadora.somar(2, 2);
-        expect(Calculadora.somar.calls.allArgs())
-            .toEqual([[1, 1], [2, 2]]);
+        
+        var retorno = Calculadora.somar.calls.all();
+
+        expect(retorno[1].object).toEqual(Calculadora);
+        expect(retorno[1].args).toEqual([2, 2]);
+        expect(retorno[1].returnValue).toEqual(10);
     });
 
 });
