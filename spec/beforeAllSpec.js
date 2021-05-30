@@ -1,4 +1,4 @@
-describe("Teste do afterAll", function () {
+describe("Teste do beforeAll", function () {
 
     var contador = 0;
 
