@@ -102,4 +102,15 @@ describe("Testes do objeto Spy", function() {
         expect(retorno[1].returnValue).toEqual(10);
     });
 
+    it("deve demonstrar o uso do calls.mostRecent", function() {
+        Calculadora.somar(1, 1);
+        Calculadora.somar(2, 2);
+        
+        var retorno = Calculadora.somar.calls.mostRecent();
+
+        expect(retorno.object).toEqual(Calculadora);
+        expect(retorno.args).toEqual([2, 2]);
+        expect(retorno.returnValue).toEqual(10);
+    });
+
 });
