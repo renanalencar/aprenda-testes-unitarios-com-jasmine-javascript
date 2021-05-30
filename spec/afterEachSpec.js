@@ -14,7 +14,7 @@ describe("Teste do afterEach", function () {
         expect(contador).toEqual(1);
     }); 
 
-    it("deve ainda garantir o contador com valor 1", function() {
+    xit("deve ainda garantir o contador com valor 1", function() {
         expect(contador).toEqual(1);
     });
 });

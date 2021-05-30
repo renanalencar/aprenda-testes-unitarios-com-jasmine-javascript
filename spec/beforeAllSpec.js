@@ -10,11 +10,11 @@ describe("Teste do beforeAll", function () {
         contador++;
     });
 
-    it("deve garantir o valor 11 para o contador", function() {
+    xit("deve garantir o valor 11 para o contador", function() {
         expect(contador).toEqual(11);
     }); 
 
-    it("deve garantir o valor 12 para o contador", function() {
+    xit("deve garantir o valor 12 para o contador", function() {
         expect(contador).toEqual(12);
     });
 });
