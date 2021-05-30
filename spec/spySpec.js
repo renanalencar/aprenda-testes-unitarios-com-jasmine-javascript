@@ -25,4 +25,11 @@ describe("Testes do objeto Spy", function() {
         Calculadora.somar(1, 2);
         expect(Calculadora.somar).toHaveBeenCalledTimes(2);
     });
+
+    it("deve chamar o método somar com os parâmetros válidos", function() {
+        Calculadora.somar(1, 1);
+        Calculadora.somar(1, 2);
+        expect(Calculadora.somar).toHaveBeenCalledWith(1,1);
+        expect(Calculadora.somar).toHaveBeenCalledWith(1,2);
+    });
 });
