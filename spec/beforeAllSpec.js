@@ -14,7 +14,8 @@ describe("Teste do beforeAll", function () {
         expect(contador).toEqual(11);
     }); 
 
-    xit("deve garantir o valor 12 para o contador", function() {
+    it("deve garantir o valor 12 para o contador", function() {
         expect(contador).toEqual(12);
+        pending("implementar...");
     });
 });
