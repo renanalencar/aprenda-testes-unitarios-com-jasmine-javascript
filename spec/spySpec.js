@@ -11,12 +11,12 @@ describe("Testes do objeto Spy", function() {
 
     beforeAll(function() {
         // spyOn(Calculadora, "somar").and.callThrough();
-        // spyOn(Calculadora, "somar").and.returnValue(10);
+        spyOn(Calculadora, "somar").and.returnValue(10);
         // spyOn(Calculadora, "somar").and.returnValues(1, 5);
         // spyOn(Calculadora, "somar").and.callFake(function(n1, n2) {
         //     return n1 - n2;
         // });
-        spyOn(Calculadora, "somar").and.throwError("erro");
+        // spyOn(Calculadora, "somar").and.throwError("erro");
         spyOn(Calculadora, "subtrair");
     });
 
@@ -62,7 +62,13 @@ describe("Testes do objeto Spy", function() {
     //     expect(Calculadora.somar(5,2)).toEqual(3);
     // });
 
-    it("deve transformar o método somar em subtração", function() {
-        expect(function() { Calculadora.somar(5,2); }).toThrowError("erro");
+    // it("deve transformar o método somar em subtração", function() {
+    //     expect(function() { Calculadora.somar(5,2); }).toThrowError("erro");
+    // });
+
+    it("deve demonstrar o uso do calls.any", function() {
+        Calculadora.somar(1, 1);
+        expect(Calculadora.somar.calls.any()).toBeTruthy();
     });
+
 });
