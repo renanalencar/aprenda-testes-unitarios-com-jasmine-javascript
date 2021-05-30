@@ -11,4 +11,10 @@ describe("Testes do objeto jasmine", function () {
 
         expect(dobro).toHaveBeenCalledWith(jasmine.any(Number));
     });
+
+    it("deve demonstrar o uso do jasmine.anything", function () {
+        dobro(10);
+
+        expect(dobro).toHaveBeenCalledWith(jasmine.anything());
+    });
 });
