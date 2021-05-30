@@ -91,25 +91,36 @@ describe("Testes do objeto Spy", function() {
     //         .toEqual([[1, 1], [2, 2]]);
     // });
 
-    it("deve demonstrar o uso do calls.all", function() {
+    // it("deve demonstrar o uso do calls.all", function() {
+    //     Calculadora.somar(1, 1);
+    //     Calculadora.somar(2, 2);
+        
+    //     var retorno = Calculadora.somar.calls.all();
+
+    //     expect(retorno[1].object).toEqual(Calculadora);
+    //     expect(retorno[1].args).toEqual([2, 2]);
+    //     expect(retorno[1].returnValue).toEqual(10);
+    // });
+
+    // it("deve demonstrar o uso do calls.mostRecent", function() {
+    //     Calculadora.somar(1, 1);
+    //     Calculadora.somar(2, 2);
+        
+    //     var retorno = Calculadora.somar.calls.mostRecent();
+
+    //     expect(retorno.object).toEqual(Calculadora);
+    //     expect(retorno.args).toEqual([2, 2]);
+    //     expect(retorno.returnValue).toEqual(10);
+    // });
+
+    it("deve demonstrar o uso do calls.first", function() {
         Calculadora.somar(1, 1);
         Calculadora.somar(2, 2);
         
-        var retorno = Calculadora.somar.calls.all();
-
-        expect(retorno[1].object).toEqual(Calculadora);
-        expect(retorno[1].args).toEqual([2, 2]);
-        expect(retorno[1].returnValue).toEqual(10);
-    });
-
-    it("deve demonstrar o uso do calls.mostRecent", function() {
-        Calculadora.somar(1, 1);
-        Calculadora.somar(2, 2);
-        
-        var retorno = Calculadora.somar.calls.mostRecent();
+        var retorno = Calculadora.somar.calls.first();
 
         expect(retorno.object).toEqual(Calculadora);
-        expect(retorno.args).toEqual([2, 2]);
+        expect(retorno.args).toEqual([1, 1]);
         expect(retorno.returnValue).toEqual(10);
     });
 
