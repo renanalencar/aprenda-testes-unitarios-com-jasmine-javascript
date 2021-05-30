@@ -71,17 +71,24 @@ describe("Testes do objeto Spy", function() {
     //     expect(Calculadora.somar.calls.any()).toBeTruthy();
     // });
 
-    it("deve demonstrar o uso do calls.count", function() {
-        Calculadora.somar(1, 1);
-        Calculadora.somar(2, 2);
-        expect(Calculadora.somar.calls.count()).toEqual(2);
-    });
+    // it("deve demonstrar o uso do calls.count", function() {
+    //     Calculadora.somar(1, 1);
+    //     Calculadora.somar(2, 2);
+    //     expect(Calculadora.somar.calls.count()).toEqual(2);
+    // });
 
     it("deve demonstrar o uso do calls.argsFor", function() {
         Calculadora.somar(1, 1);
         Calculadora.somar(2, 2);
         expect(Calculadora.somar.calls.argsFor(0)).toEqual([1, 1]);
         expect(Calculadora.somar.calls.argsFor(1)).toEqual([2, 2]);
+    });
+
+    it("deve demonstrar o uso do calls.allArgs", function() {
+        Calculadora.somar(1, 1);
+        Calculadora.somar(2, 2);
+        expect(Calculadora.somar.calls.allArgs())
+            .toEqual([[1, 1], [2, 2]]);
     });
 
 });
